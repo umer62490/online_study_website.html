@@ -1,0 +1,554 @@
+:root{
+    --gradient:linear-gradient(90deg, #3d0b77,#05993e);
+}
+
+*{
+    font-family:'open sans',sans-serif;
+    margin:5px;
+    padding:0;
+    box-sizing:border-box;
+    border:none;
+    outline:none;
+    text-decoration:none;
+    text-transform:capitalize;
+    transition: all .2s linear;
+
+}
+*::selection{
+    background:#3d0b77;
+    color:#fff;
+}
+html{
+    font-size:62.5%;
+    overflow-x:hidden;
+}
+html::-webkit-scrollbar{
+    width:1.5rem;
+}
+html::-webkit-scrollbar-track{
+    background:#3d0b77;
+}
+html::-webkit-scrollbar-thumb{
+    background:linear-gradient(#3d0b77,#05993e);
+}
+section{
+    min-height: 100vh;
+    padding:1rem 7%;
+    padding-top:6rem;
+}
+.btn{
+    padding:7rem 3rem;
+    font-size:2rem;
+    color:#fff;
+    background:var(--gradient);
+    border-radius:50%;
+    margin-top:1rem;
+    cursor:pointer;
+    box-shadow: 0 .1rem .3rem rgb(129, 19, 19);
+    position:relative;
+    overflow:hidden;
+    z-index:0;
+
+}
+.btn::before{
+    content:'';
+    position:absolute;
+    top:-1rem; 
+    left:-100%;
+    background:#fff;
+    height:150%;
+    width:20%;
+    transform:rotate(25deg);
+    z-index:-1;
+}
+.btn:hover::before{
+    left:120%;
+    transition: .4s lines;
+}
+
+body{
+    height:100rem;
+}
+.heading{
+    color:rgb(14, 7, 7);
+    padding:1rem;
+    font-size:4rem ;
+    text-align:center;
+}
+header{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    padding:1.5rem 7%;
+    background:var(--gradient);
+    box-shadow: 0 .1rem .3rem rgb(134, 5, 5);
+}
+header .logo{
+    color:#fff;
+    font-size:2.5rem;
+}
+header .navbar ul{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    list-style:none;
+    vertical-align: none;
+}
+
+header .navbar ul li a{
+    font-size:2rem;
+    color:#fff;
+
+
+}
+
+header .navbar ul li a:hover{
+    color:rgb(148, 10, 10);
+    
+}
+header #login{
+    font-size:3rem;
+    color:#fff;
+    cursor:pointer;
+}
+
+header #login:hover{
+    color:#fff;
+    
+}
+
+header #menu{
+    font-size:3rem;
+    color:#fff;
+    cursor:pointer;
+    display:none;
+}
+
+@media (max-width:500px){
+    html{
+        font-size:50%;
+    }
+
+    .contact .row form .box{
+        width:100%;
+    }
+    header #menu{
+        display:block;
+    }
+    header .navbar{
+        position:fixed;
+        top:6.4rem;
+        left:0;
+        width:100%;
+        background:rgb(133, 6, 6);
+        justify-content:center;
+    }
+    header .navbar ul{
+        flex-flow:column;
+        padding:2rem 0;
+    }
+    header .navbar ul li{
+        margin:1.5rem 0;
+        text-align: center;
+        width:100%;
+    }
+
+    header .navbar ul li a{
+        font-size:2.5rem;
+        display:block;
+    }
+    header .navbar ul li a.active,
+    header .navbar ul li a:hover{
+        color:#3d0b77;
+    }
+
+    .home h1{
+        font-size:4rem;
+
+    }
+    .home p{
+        width:auto;
+    }
+
+    .teacher p{
+
+        width:auto;
+    }
+
+    .contact .row .image{
+        display:none;
+    }
+
+}
+.login-form{
+    height:100%;
+    width:100%;
+    position:fixed;
+    top:-120%;
+    left:0;
+    z-index:1000;
+    background:rgb(131, 12, 12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.login-form form{
+    width:35rem;
+    background:#fff;
+    margin:0 2rem;
+    padding:1rem 3rem;
+    border-radius:.5rem;
+    box-shadow:0 .1rem .3rem rgb(26, 16, 16);
+    position: relative;
+}
+.login-form form h3{
+    font-size:3rem;
+    color:#3d0b77;
+    padding:1rem 0;
+
+}
+
+.login-form form .box{
+    width:100%;
+    padding:1rem 0;
+    margin:1rem 0;
+    border-bottom:2rem solid rgb(19, 10, 10);
+    font-size:1.6rem;
+    color:rgb(31, 20, 20);
+    text-transform:none;
+}
+
+.login-form form .box::placeholder{
+    text-transform:capitalize;
+
+}
+.login-form form .box:focus{
+    border-color:#3d0b77;
+
+}
+.login-form form .box:nth-child(3){
+    margin-bottom:5rem;
+
+}
+.login-form form p{
+    font-size:1.4rem;
+    color:rgb(22, 12, 12);
+    padding:.5rem 0;
+
+}
+.login-form form p a{
+    color:#3d0b77;
+}
+
+.login-form form .btn{
+    width: 100%;
+    margin:2rem 0;
+
+}
+.login-form form .btn:hover{
+    background:#3d0b77;
+}
+.login-form form .fa-xmart{
+    position:absolute;
+    top:1.5rem; 
+    right:2rem;
+    font-size:2.5rem;
+    cursor:pointer;
+    color:rgb(34, 22, 22);
+}
+.login-form form .fa-xmart:hover{
+    color:rgb(17, 13, 13);
+}
+.home{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-flow:column;
+    background:url(https://thumbs.dreamstime.com/b/children-education-kid-read-book-school-boy-reading-books-dreaming-over-blackboard-background-92807607.jpg) no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    text-align:center;
+    flex:1 1 40rem;
+}
+.home p{
+    font-size:1.5rem;
+    color:rgb(8, 8, 12);
+    padding:1rem 0;
+    width:40rem;
+}
+.home .p{
+
+    font-size:1.5rem;
+    color:rgb(128, 16, 16);
+    padding:1rem 0;  
+
+}
+
+.about{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.about .image{
+    flex:1 1 40rem;
+}
+.about .image img{
+    height:65vh;
+    width:100%;
+
+}
+.about .content{
+    flex:1 1 40rem;
+}
+
+.about .content h3{
+    font-size:3.5rem;
+    color:rgb(26, 13, 13);
+}
+.about .content p{
+    font-size:1.5rem;
+    color:rgb(10, 4, 4);
+    padding:1rem 0;
+}
+
+.course .box-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.course .box-container .box{
+    width:80rem;
+    border:.1rem solid black;
+    position:relative;
+    margin:1.5rem;
+
+}
+
+.course .box-container .box img{
+    height:20rem;
+    width:100%;
+    object-fit:cover;
+
+}
+.course .box-container .box .content{
+    padding:1rem;
+
+}
+
+.course .box-container .box .content .stars i{
+    color:#3d0b77;
+    font-size:1.7rem;
+    padding:1rem .1rem;
+}
+
+.course .box-container .box .content .title{
+    color:rgb(20, 10, 10);
+    font-size:2.1rem;
+
+}
+
+.course .box-container .box .content .title:hover{
+    text-decoration: underline;
+}
+
+.course .box-container .box .content p{
+    padding:1rem 0;
+    color:rgb(29, 11, 11);
+    font-size:1.5rem;
+}
+
+.course .box-container .box .content .info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:5rem;
+    border-top:.1rem solid rgb(24, 9, 9);
+
+
+}
+
+.course .box-container .box .content .info h3{
+    font-size:1.5rem;
+    padding:1rem;
+    color:rgb(26, 15, 15);
+
+}
+
+.course .box-container .box .content .info h3 i{
+    color:#3d0b77;
+}
+
+.course .box-container .box  .price{
+
+    position:initial;
+    top:16rem;
+    right:1rem;
+    height:8rem;
+    width:8rem;
+    line-height:8rem;
+    text-align:center;
+    border-radius:50%;
+    background:var(--gradient);
+    color:#fff;
+    font-size:3rem;
+}
+
+.teacher{
+    text-align:center;
+    background:url(https://media.istockphoto.com/photos/teachers-in-the-hallway-picture-id641755258?k=20&m=641755258&s=612x612&w=0&h=lkz3Q7SUiGJ2PPYPDRS-qepGdyvuuK9bZW-im8OhbSk=);
+    background-size:cover;
+    background-position:bottom;
+
+
+}
+
+.teacher p{
+
+    font-size:1.8rem;
+    color:rgb(29, 16, 16);
+    width:40rem;
+    margin:1rem auto;
+
+}
+
+.contact{
+    background:rgb(31, 15, 15);
+}
+
+.contact .heading{
+    color:#fff;
+}
+
+.contact .row{
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.contact .row form{
+    flex:1 1 50rem;
+    background: rgb(31, 18, 18);
+    padding:2rem;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    margin-top:3rem;
+    align-items:flex-start;
+}
+
+.contact .row form .box{
+
+    height:5rem;
+    width:49%;
+    border:1rem solid white;
+    padding:0 1rem;
+    margin:1rem 0;
+    font-size:1.7rem;
+    color:#fff;
+    background:none;
+    text-transform:none;
+}
+
+.contact .row form .box:focus{
+
+    border-color:#3d0b77;
+}
+
+.contact .row form .box::placeholder{
+
+    text-transform:capitalize;
+}
+
+.contact .row form .address{
+    height:15rem;
+    padding:1rem;
+    resize:none;
+    width:100%;
+}
+
+.contact .row form .btn:hover{
+
+    background: #fff;
+    color:rgb(17, 6, 6);
+
+}
+
+.contact .row .image img{
+    height:80vh;
+    margin-top:2rem;
+    flex:1 1 40rem;
+    width:100%;
+}
+
+.footer{
+    background: rgb(26, 20, 20);
+}
+
+.footer .box-container{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.footer .box-container .box{
+
+    margin:1.5rem;
+    text-align: center;
+    flex:1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    font-size:2.5rem;
+    color:#fff;
+    padding:1rem 0;
+}
+
+.footer .box-container .box p{
+    font-size:1.5rem;
+    color:#eee;
+    padding:5rem 0;
+}
+
+.footer .box-container .box p i{
+   padding-right: .5rem;
+   color:#3d0b77;
+}
+
+.footer .box-container .box a{
+    font-size:1.8rem;
+    display:block;
+    padding:.5rem 0;
+    color:#eee;
+
+    
+}
+
+.footer .box-container .box a:hover{
+    text-decoration:underline;
+}
+
+.footer .credit{
+    padding:2rem 1rem;
+    font-size:2rem;
+    color:#fff;
+    background:rgb(17, 14, 14);
+    text-align:center;
+    font-weight:bolder;
+}
+
+.footer .credit a{
+    color:#3d0b77;
+
+}
